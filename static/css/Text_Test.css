@@ -1,0 +1,175 @@
+html{
+    scroll-snap-type : y mandatory;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family:arial;
+}
+
+div.section 
+{
+    /* padding: 60px 40px; */
+    min-height: 100vh;
+    scroll-snap-align : start;
+    margin: 0px;
+    padding: 0px;
+}
+
+#section1{
+    /* background-color: #fad390; */
+    display: grid;
+    background-image: url("../Mainpage_Background.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    /* border-bottom: 1px solid #ccc; */
+    background-color: #f4efe9;
+    position: absolute;
+}
+  
+.logo {
+    flex-shrink: 0;
+}
+  
+.logo img {
+    height: 90px;
+}
+  
+.links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+  
+.links a {
+    margin: 0 20px;
+    color: #5d5e70;
+    text-decoration: none;
+    font-family: "LEMON MILK";
+    font-weight: 100;
+    font-size: 3rem;
+  }
+  
+  .links a:hover {
+    color: #954f3a;
+  }
+  
+  .links a.active {
+    font-weight: 400;
+  }
+  
+  .links::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    margin-right: 20px;
+  }
+
+  .rectangle {
+    width: 1403px;
+    height: 5px;
+    background-color: #5d5e70;
+    margin: 20px;
+  }
+
+
+#section1{
+  padding-top: 100px;
+  text-align: center;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.timer-box {
+    position: absolute;
+    margin-top: -925px;
+    width: 100%;
+    height: 20px;
+    background-color: lightgray;
+}
+
+.timer {
+    height: 100%;
+    background-color: #954f3a;
+}
+
+#question-text{
+    margin-top: -230px;
+    color: #f4efe9;
+    font-family: "LEMON MILK";
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.input-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 100px;
+    background-color: transparent;
+    border: 5px solid #954f3a;
+    border-radius: 10px 10px 0 0;
+}
+
+.input-box input {
+    width: calc(100% - 80px);
+    height: 79%;
+    padding: 10px;
+    border: none;
+    border-radius: 7px 0 0 0;
+    font-size: 16px;
+}
+
+.input-box button {
+    width: 80px;
+    height: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #954f3a;
+    border-left: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-box button:hover {
+    background-color: #954f3a;
+}
+
+.input-box button svg {
+    display: block;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mockvue</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/Instructions.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        </head>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='Mockvue_logo.png') }}" alt="Logo">
+            </div>
+            <div class="rectangle"></div>
+            <div class="links">
+                <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" onclick="location.href='{{ url_for('home') }}#section4'">About</a>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="hidden_ins">                    
+                <p class="section_title">INSTRUCTIONS</p>
+                <p class="section_text">Read the question carefully before answering</p>
+                <p class="section_text">You will have a total of 10 questions</p>
+                <p class="section_text">For each question you will have one minute to answer</p>
+                <p class="section_text">Timer can be seen below the navbar. The brown bar represents the time remaining</p>
+                <p class="section_text">Failure to answer the question within the time limit will be marked as 0</p>
+                <p class="section_text">Answers should be to the point</p>
+                <p class="section_text">Pay special attention to the grammar</p>
+                <a href="{{ url_for('Text_Test') }}" class="btn">PROCEED</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static',filename='script/Instructions.js') }}"></script>
+    </body>
+</html>

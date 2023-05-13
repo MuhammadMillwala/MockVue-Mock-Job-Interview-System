@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mockvue</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/Main_page.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        </head>
+    <body>
+    <div class="navbar">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='Mockvue_logo.png') }}" alt="Logo">
+                </div>
+                <div class="rectangle"></div>
+                <div class="links">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    <a class="nav-link" onclick="location.href='#section4'">About</a>
+                </div>
+            </div>
+        <div class="section hidden" id="section1">
+            <!--<img src="{{ url_for('static', filename='Mainpage_Background.png') }}" alt="BG_1">-->
+            <div style="display: flex; justify-content: space-between;">
+                <div id="section1_text">
+                    <p class="section1_title">MOCKVUE</p>
+                    <p class="section1_tagline">AI BASED MOCK JOB</p>
+                    <p class="section1_tagline">INTERVIEW SYSTEM</p>
+                    <p class="section1_text">We aim to create a user friendly environment for us</p>
+                    <p class="section1_text">sers that have no prior experience of job interviews.</p>
+                    <p class="section1_text">We hope our users, using our product can identify t-</p>
+                    <p class="section1_text">he areas that they lack and can improve their skills </p>
+                    <p class="section1_text">with the help of the score generated in the end.</p>
+                    <div id="mainpage_buttons">
+                        <a href="{{ url_for('text_test_instructions') }}" class="btn">WRITTEN</a>
+	                    <a href="{{ url_for('video_test_instructions') }}" class="btn"> VIDEO </a>
+                    </div>
+                </div>
+                <div id="section1_image">
+                    <img src="{{ url_for('static', filename='Mainpage_section1.png') }}" alt="Logo">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="section hidden" id="section2">
+        <div class="section2_text">
+            <p class="section2n3_title">WHAT WE DO</p>
+            <p class="section2n3_tagline">OUR OFFER</p>
+            <p class="section2n3_text">One big aim of our project will be to completely avoid bias. Interview bias</p>
+            <p class="section2n3_text">occurs when the interviewer judges a candidate not only on their skills</p>
+            <p class="section2n3_text">and competencies but on unspoken or unconscious criteria hence making</p>
+            <p class="section2n3_text">the interview less objective. Our web application will judge candidates pu-</p>
+            <p class="section2n3_text">rely on the basis of their competence.</p>
+        </div>
+            <div style="display: flex;" class="section2imgs">
+                <img src="{{ url_for('static', filename='Mainpage_section21.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='Mainpage_section22.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='Mainpage_section23.png') }}" alt="Logo">
+            </div>
+            <div id="section2_underimage_text">
+                <p>PRACTICE</p>
+                <p>QUIZ</p>
+                <p>LEARN</p>
+            </div>
+        </div>
+
+        <div class="section hidden" id="section3">
+            <div id="section3_text">
+                <p class="section2n3_title">LEARN MORE</p>
+                <p class="section2n3_tagline">FEATURES</p>
+            </div>
+            <div style="display: flex;" class="section3imgs">
+                <img src="{{ url_for('static', filename='Mainpage_section31.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='Mainpage_section32.png') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='Mainpage_section33.png') }}" alt="Logo">
+            </div>
+        </div>
+
+        <div class="section hidden" id="section4">
+            <div style="display: flex;">
+                <div style="display: flex" class="section4_left">
+                    <img src="{{ url_for('static', filename='Mainpage_section41.png') }}" alt="Logo">
+                    <img src="{{ url_for('static', filename='Mainpage_section42.png') }}" alt="Logo">
+                    <img src="{{ url_for('static', filename='Mainpage_section43.png') }}" alt="Logo">
+                </div>
+                <div class="section4_right">
+                    <p>LEARN</p>
+                    <p>PRACTICE</p>
+                    <p>GROW</p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static',filename='script/Main_page.js') }}"></script>
+    </body>
+</html>

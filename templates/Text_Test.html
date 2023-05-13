@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mockvue</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/Text_Test.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        </head>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="links">
+                <a class="nav-link" href="{{ url_for('home') }}">< QUIT</a>
+            </div>
+            <div class="rectangle"></div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='Mockvue_logo.png') }}" alt="Logo">
+            </div>
+        </div>
+
+        
+        <div class="section" id="section1">
+            <div class="container">
+                <div class="timer-box">
+                    <div class="timer"></div>
+                </div>
+                <div class="question-box">
+                    <h1 id="question-text"></h1>
+                    <div class="input-box">
+                        <input type="text" id="answer-input" placeholder="Type your answer here...">
+                        <button id="submit-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static',filename='script/Text_Test.js') }}"></script>
+    </body>
+</html>
