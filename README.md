@@ -50,7 +50,7 @@ pip install -r requirements.txt
 3. Start the Flask server:
 
 ```
-python app.py
+python server.py
 ```
 
 4. Navigate to `localhost:5000` in your web browser.
