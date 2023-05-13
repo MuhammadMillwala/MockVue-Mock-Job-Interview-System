@@ -1,6 +1,7 @@
 # MockVue
 
-![Mockvue logo](https://github.com/MuhammadMillwala/MockVue-Mock-Job-Interview-System/assets/106543900/4e89325e-a94a-499c-b6b1-085a4d2a12a8)
+![logo](https://github.com/MuhammadMillwala/MockVue-Mock-Job-Interview-System/assets/106543900/57989c2c-5712-4c7e-a8fc-7f3710836341)
+
 
 MockVue is an AI-based mock job interview system aimed at helping job-seekers, especially fresh graduates, practice giving interviews in the field of Artificial Intelligence. The web application generates interview questions for the candidate, analyzes their competency to answer the questions, and assesses their behavior through facial expression, eye movement, and hand gesture analysis. A score is generated at the end, highlighting the candidate's strengths and weaknesses.
 
