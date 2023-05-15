@@ -1,0 +1,9 @@
+numpy
+flask
+opencv-python
+deepface
+pandas
+spacy
+librosa
+soundfile
+SpeechRecognition
