@@ -1,14 +1,3 @@
-from __future__ import print_function # In python 2.7
-import numpy as np
-import pickle
-import os
-from flask import Flask,redirect,url_for,render_template,request,jsonify
-from flask import Response
-import time
-import os
-# !python -m spacy download en_core_web_md
-import spacy
-nlp = spacy.load("en_core_web_md")
 import cv2
 import subprocess
 from deepface import DeepFace
@@ -20,10 +9,18 @@ import librosa
 import soundfile as sf
 import speech_recognition as speechrecognizer
 import speech_recognition as sr
-
+from __future__ import print_function # In python 2.7
+import numpy as np
+import pickle
+import os
+from flask import Flask,redirect,url_for,render_template,request,jsonify
+from flask import Response
+import time
+import os
+# !python -m spacy download en_core_web_md
+import spacy
+nlp = spacy.load("en_core_web_md")
 import math
-
-
 
 app = Flask(__name__)
 df = pd.read_csv('data/normalized_dataset.csv')
@@ -39,7 +36,7 @@ ALLOWED_EXTENSIONS = {'ogg', 'wav', 'mp3'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture
 emotion_counts = {
     'angry': 0,
     'disgust': 0,
@@ -57,7 +54,6 @@ def sentences_similarity(sentence1,sentence2):
     doc2 = nlp(sentence2)
     similarity = doc1.similarity(doc2)
     return similarity
-        
 
 @app.route('/')
 def index():
@@ -120,7 +116,6 @@ def home():
         'no_face': 0,
     } 
     return render_template('Main_page.html')
-
 @app.route('/about')
 def about():
     return render_template('Main_page.html')
@@ -148,8 +143,6 @@ def Video_Test():
 @app.route('/Video_Test_Results')
 def Video_Test_Results():
     return render_template('Video_Test_Results.html')
-
-    
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')
