@@ -1,0 +1,148 @@
+html{
+  scroll-snap-type : y mandatory;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:arial;
+}
+
+div.section 
+{
+  /* padding: 60px 40px; */
+  min-height: 100vh;
+  scroll-snap-align : start;
+  margin: 0px;
+  padding: 0px;
+}
+
+#section1{
+  /* background-color: #fad390; */
+  display: grid;
+  background-image: url("../Mainpage_Background.png");
+  background-size: cover;
+  background-position: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: #f4efe9;
+  position: absolute;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 90px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.links a {
+  margin: 0 20px;
+  color: #5d5e70;
+  text-decoration: none;
+  font-family: "LEMON MILK";
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+.links a:hover {
+  color: #954f3a;
+}
+
+.links a.active {
+  font-weight: 400;
+}
+
+.links::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  margin-right: 20px;
+}
+
+.rectangle {
+  width: 1403px;
+  height: 5px;
+  background-color: #5d5e70;
+  margin: 20px;
+}
+
+
+#section1{
+padding-top: 100px;
+text-align: center;
+}
+
+
+#timer-container {
+  margin-top: 0px;
+  width: 100%;
+  height: 20px;
+  background-color: lightgray;
+}
+
+#timer {
+  height: 100%;
+  background-color: #954f3a;
+}
+
+
+#question{
+  color: #f4efe9;
+  font-family: "LEMON MILK";
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
+#video_buttons{
+  padding-top: 0px;
+  padding-left: 0px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 4px solid #954f3a;
+  color: #954f3a;
+  background: transparent;
+  font-family: "LEMON MILK";
+  font-size: 1rem;
+  font-weight:lighter;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 20px;
+  width: 150px; /* set width of buttons */
+height: 80px; 
+}
+.btn:hover {
+  background: #954f3a;
+  color: #fff;
+  border-color: #954f3a;
+}
+
+
+img {
+  display: block;
+  margin: auto;
+}

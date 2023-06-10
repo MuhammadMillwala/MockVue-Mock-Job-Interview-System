@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mockvue</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/Video_Test_Results.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        </head>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="links">
+                <a class="nav-link" href="{{ url_for('home') }}">< QUIT</a>
+            </div>
+            <div class="rectangle"></div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='Mockvue_logo.png') }}" alt="Logo">
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div id="chart_div">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="myTable" class="container"></div>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static',filename='script/Video_Test_Results.js') }}"></script>
+    </body>
+</html>
