@@ -1,3 +1,7 @@
+"""
+This module contains a Flask server implementation for handling text and video-based questions and answers.
+"""
+
 import pickle
 import numpy as np
 import os
@@ -21,7 +25,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 nlp = spacy.load('en_core_web_sm')
 
 # Load the face cascade file
-faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+from cv2 import CascadeClassifier
+faceCascade = CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Global variables
 Questions_Arr = []
@@ -32,6 +37,16 @@ emotion_counts = {"angry": 0, "disgust": 0, "fear": 0, "happy": 0, "sad": 0, "su
 
 
 def sentences_similarity(sentence1, sentence2):
+    """
+    Calculate the similarity between two sentences using spaCy.
+
+    Args:
+        sentence1: The first sentence.
+        sentence2: The second sentence.
+
+    Returns:
+        The similarity score between the sentences.
+    """
     doc1 = nlp(sentence1)
     doc2 = nlp(sentence2)
     return doc1.similarity(doc2)
@@ -39,8 +54,14 @@ def sentences_similarity(sentence1, sentence2):
 
 @app.route('/Questions')
 def text_questions():
+    """
+    Retrieve a list of random questions.
+
+    Returns:
+        A JSON response containing the list of questions.
+    """
     global Questions_Arr, Correct_Answer_Arr
-    random_rows = df.sample(n=10)
+    random_rows = df.sample(n=10)  # Replace 'df' with your DataFrame or modify as needed
     Questions_Arr = random_rows['Questions'].tolist()
     Correct_Answer_Arr = random_rows['Answers'].tolist()
     return jsonify(Questions_Arr)
@@ -48,13 +69,22 @@ def text_questions():
 
 @app.route('/Text_Answers/<int:QuestionIndex>', methods=['POST'])
 def text_answers(QuestionIndex):
+    """
+    Submit text answers to the questions.
+
+    Args:
+        QuestionIndex: The index of the current question.
+
+    Returns:
+        If the last question is submitted, returns the score as a JSON response.
+        Otherwise, returns 'success' as a JSON response.
+    """
     global User_Answers, Correct_Answer_Arr, Questions_Arr
     User_Answers.append(request.form['userAnswer'])
     if QuestionIndex == 9:
         score = 0
         for i in range(10):
             similarity = sentences_similarity(User_Answers[i], Correct_Answer_Arr[i])
-            similarities.append(similarity)
             if similarity >= 0.5:
                 score += 1
         return jsonify(score)
@@ -63,6 +93,12 @@ def text_answers(QuestionIndex):
 
 @app.route('/Video_Answers', methods=['POST'])
 def video_answers():
+    """
+    Submit video answers with emotion analysis.
+
+    Returns:
+        A JSON response indicating the success or error status.
+    """
     global All_Video_Details, emotion_counts
     video_file = request.files['videoFile']
     video_filename = secure_filename(video_file.filename)
