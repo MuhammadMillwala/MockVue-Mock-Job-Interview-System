@@ -12,9 +12,6 @@ import cv2
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 import spacy
-import librosa
-import soundfile as sf
-import speech_recognition as sr
 from deepface import DeepFace
 
 app = Flask(__name__)
@@ -83,6 +80,7 @@ def text_answers(QuestionIndex):
     User_Answers.append(request.form['userAnswer'])
     if QuestionIndex == 9:
         score = 0
+        similarities = []
         for i in range(10):
             similarity = sentences_similarity(User_Answers[i], Correct_Answer_Arr[i])
             if similarity >= 0.5:
